@@ -1,0 +1,99 @@
+#include<stdio.h>
+int main()
+{
+    char name[100];
+    int date=0,month=0,year=0,des;
+    
+    int A=1,J=1,S=1;
+    int B=2,K=2,T=2;
+    int C=3,L=3,U=3;
+    int D=4,M=4,V=4;
+    int E=5,N=5,W=5;
+    int F=6,O=6,X=6;
+    int G=7,P=7,Y=7;
+    int H=8,Q=8,Z=8;
+    int I=9,R=9;
+    scanf("%d/%d/%d",&date,&month,&year);
+    scanf("%s",name);
+    int y1=year%10;
+    int y2=(year%100)/10;
+    int y3=(year%1000)/100;
+    int y4=year/1000;
+    int m1=month%10;
+    int m2=(month%100)/10;
+    int d1=date%10;
+    int d2=(date%100)/10;
+    int y=y1+y2+y3+y4;
+    int yy=y%10;
+    int yy1=(y%100)/10;
+    int z=yy+yy1;
+    int m=m1+m2;
+    int nn=m%10;
+    int nn1=(m%100)/10;
+    int n=nn+nn1;
+    int d=d1+d2;
+    int dd=d%10;
+    int dd1=(d%100)/10;
+    int e=dd+dd1;
+    int tot=z+n+e;
+    int t=tot%10;
+    int t1=(tot%100)/10;
+    int life=t+t1;
+    printf("life path number %d\n",life);
+    int sum=0;
+    for(int i=0;name[i]!='\0';i++)
+    {
+        switch(name[i])
+        {
+            case 'a':case 'j': case 's':
+            case 'A':case 'J': case 'S':
+            sum=sum+1;
+            break;
+            case 'b':case 'k': case 't':
+            case 'B':case 'K': case 'T':
+            sum=sum+2;
+            break;
+            case 'c':case 'l': case 'u':
+            case 'C':case 'L': case 'U':
+            sum=sum+3;
+            break;
+            case 'd':case 'm': case 'v':
+            case 'D':case 'M': case 'V':
+            sum=sum+4;
+            break;
+            case 'e':case 'n': case 'w':
+            case 'E':case 'N': case 'W':
+            sum=sum+5;
+            break;
+            case 'f':case 'o': case 'x':
+            case 'F':case 'O': case 'X':
+            sum=sum+6;
+            break;
+            case 'g':case 'p': case 'y':
+            case 'G':case 'P': case 'Y':
+            sum=sum+7;
+            break;
+            case 'h':case 'q': case 'z':
+            case 'H':case 'Q': case 'Z':
+            sum=sum+8;
+            break;
+            case 'i':case 'r': 
+            case 'I':case 'R': 
+            sum=sum+9;
+            break;
+        }
+    }
+    des=sum/100 + (sum/10)%10 + sum%10;
+    
+    printf("Destiny number %d\n",des);
+    
+    if(life==des)
+    {
+        printf("Lucky");
+    }
+    else
+    {
+        printf("Not Lucky");
+    }
+    
+}
